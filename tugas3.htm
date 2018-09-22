@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AXIS SERVICES</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var query = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(query) > -1)
+    });
+  });
+  $("#Submit").click(function () {
+      $("#submitted").text("Form submitted!");
+  });
+  $("#logo").mouseenter(function () {
+      $(this).animate({ width: "500px", height: "500px" })
+  });
+  $("#logo").mouseleave(function () {
+      $(this).animate({ width: "200px", height: "200px" })
+  });
+});
+    </script>
+    <style>
+        body {
+            margin-left: 50px;
+            margin-right: 50px;
+            font-family: Calibri;
+            background-color: azure;
+        }
+
+        table, th, td {
+            margin: 20px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1> AXIS SERVICES </h1>
+    <hr>
+    <h1> YOUR LOCAL HANDYMAN </h1>
+    <img src="https://images.littleakiba.com/product17224-large-3.jpg" id="logo" width="200" height="200"  alt="Axis Logo" style="margin-left:200px">
+    <h2> Contact Info </h2>
+
+    <input type="text" id="search" placeholder="Search Info...">
+    <table id="myTable">
+        <tr>
+            <th>Address</th>
+            <td>Somewhere St.5, Nowhere, Antartica</td>
+        </tr>
+        <tr>
+            <th>Phone/FAX</th>
+            <td>+348 3423656/+348 4345489</td>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <td><a href="https://github.com/2018-PemrogramanWeb-D/tugas1-html-Capetian">queries@thispage.com</a></td>
+        </tr>
+    </table>
+    <hr>
+
+    <form>
+        <fieldset>
+            <legend>Service Request Form</legend>
+            Name:<br>
+            <input type="text" name="NAME"><br>
+            Address:<br>
+            <input type="text" name="ADDRESS"><br>
+            Phone/Telp No:<br>
+            <input type="text" name="TELP"><br>
+            E-mail:<br>
+            <input type="text" name="EMAIL"><br>
+            <input type="button" value="submit" id="Submit">
+        </fieldset>
+        <p id="submitted"> </p>
+    </form>
+
+</body>
+</html>
